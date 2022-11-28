@@ -1,21 +1,16 @@
 DEBUG = False
 
-def update_board(b, move):
-  # looks at board at start pocket
-  # takes number of tiles in that pocket
-  # moves through next pockets one by one for as many pockets as there are tiles in hand, adding one to each pocket
-  # displays and returns new mutated board
-  start_pocket = b[move]
-  for item in b in range(b[move])
+def update_board(board, move):
+  tiles = board[move]
+  next_pocket = move + 1
+  while tiles > 0:
     
-  return start_pocket
+    tiles = tiles - 1
+    board[next_pocket] = board[next_pocket] + 1
+    next_pocket = (next_pocket + 1) % len(board)
 
-
-
-
-
-
-
+  board[move] = 0
+  return board
 
 
 

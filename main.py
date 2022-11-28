@@ -2,19 +2,34 @@ import copy
 
 from draws_boards import *
 from update_board import *
-#from get_move import *
+from get_move import *
 
+print(demo_board())
 
-START_BOARD_DIC = {'a1':4 , 'a2':4 , 'a3':4 , 'a4':4 , 'a5':4 , 'a6':4 , 'ap':0 , 'b1':4 , 'b2':4 , 'b3':4 , 'b4':4 , 'b5':4 , 'b6':4 , 'bp':0}
+START_BOARD_LST = [4 , 4 , 4 , 4 , 4 , 4 , 0 , 4 , 4 , 4 ,  4 ,  4 ,  4 , 0]
 
-game_board_dict = copy.deepcopy(START_BOARD_DIC)
+game_board_lst = START_BOARD_LST[:]
 
+board_str = board(game_board_lst)
 
-board_str = board(game_board_dict)
 print(board_str)
 
-player_move = 'a1'
+player1 = "player 1"
 
-update_board(game_board_dict, player_move)
+player_move = get_move(player1)
 
-#update_board()
+new_board = update_board(game_board_lst, player_move)
+
+new_board_str = board(new_board)
+
+print(new_board_str)
+
+player2 = "player 2"
+
+player_move = get_move(player2)
+
+new_board = update_board(game_board_lst, player_move)
+
+new_board_str = board(new_board)
+
+print(new_board_str)
