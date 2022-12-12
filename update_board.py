@@ -8,8 +8,8 @@ def update_board(board, move):
     tiles = tiles - 1
     board[next_pocket] = board[next_pocket] + 1
     next_pocket = (next_pocket + 1) % len(board)
-
   board[move] = 0
+  
   return board
 
 

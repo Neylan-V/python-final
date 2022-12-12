@@ -16,14 +16,17 @@ def is_game_over(board):
 
 
 def who_winner(board):
+  p1 = sum(board[0:7])
+  p2 = sum(board[7:])
+  
   if is_game_over(board) == False:
     pass
   elif is_game_over(board) == True:
-    if board[6] == board[13]:
+    if p1 == p1:
       player_winner = "tie" 
-    elif board[6] > board[13]:
+    elif p1 > p2:
       player_winner = "player 1"
-    elif board[6] < board[13]:
+    elif p1 < p2:
       player_winner = "player 2"
   
   return player_winner
@@ -34,8 +37,11 @@ def who_winner(board):
 
 ############################ DEBUG ############################
 if DEBUG:
+
   print("hey it accessed game_end DEBUG! crazy.")
   test_end_board = [0 , 0 , 0 , 0 , 0 , 0 , 3 , 1 , 1 , 1 , 1 , 1 , 1 , 2]
+  final_score(test_end_board)
+  
   print(board(test_end_board))
   
   
